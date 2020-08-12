@@ -2,7 +2,6 @@ package confluencego
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"time"
@@ -47,8 +46,8 @@ func getArticles(in interface{}) []article {
 	return articles
 }
 
-func ToCollect(username, token, url string) {
+func CollectArticles(username, token, url string) []article {
 	jsonResp := getResponse(username, token, url)
 	articles := getArticles(jsonResp)
-	fmt.Println(articles)
+	return articles
 }
