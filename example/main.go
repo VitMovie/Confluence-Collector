@@ -8,11 +8,11 @@ import (
 const (
 	username = "username"
 	token  = "token"
-	url = "https://linkerbot.atlassian.net/wiki/rest/api/content?spaceKey=TS&type=page&start=0&end=99999"
+	domain = "linkerbot"
 )
 
 func main() {
 	// Collect articles with confluence id and title
-	art := confCollector.CollectArticles(username, token, url)
-	fmt.Println(art)
+	articles := confCollector.CollectArticles(username, token, domain)
+	fmt.Println(articles)
 }
